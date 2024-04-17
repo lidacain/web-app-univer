@@ -1,0 +1,44 @@
+{% extends 'table/sample.html' %}
+
+{% block title %}Таблицы{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1 class="table-striped h1">Студенты</h1>
+        <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Почта</th>
+            <th>Телефон</th>
+            <th>Дата рождения</th>
+            <th>Адрес</th>
+            <th>ID группы</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if data %}
+            {% for el in data %}
+                <tr>
+                    <td>{{ el.id }}</td>
+                    <td>{{ el.name }}</td>
+                    <td>{{ el.surname }}</td>
+                    <td>{{ el.email }}</td>
+                    <td>{{ el.phone_number }}</td>
+                    <td>{{ el.date_of_birth }}</td>
+                    <td>{{ el.address }}</td>
+                    <td>{{ el.group_id }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="10">Нет данных</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+
+    </div>
+{% endblock %}

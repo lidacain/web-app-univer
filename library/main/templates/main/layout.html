@@ -1,0 +1,20 @@
+{% extends 'main/aside.html' %}
+
+{% load static %}
+
+{% block aside %}
+    <aside class="conteiner">
+        <a href="{% url 'home' %}" class="logo-home"> <img src="{% static 'main/img/logo-univer.png' %}" alt="logo"> <span class="logo">UNIVER DB</span> </a>
+        <h3>Меню</h3>
+        <ul>
+            <a href="{% url 'home' %}" class="link" title="Go to home"><li><i class="fa-solid fa-house"></i> Главная</li></a>
+            <a href="{% url 'database' %}" class="link" title="Go to about database"><li><i class="fa-solid fa-database"></i> Про базу</li></a>
+            <a href="{% url 'faculties' %}" class="link" title="Go to tables"><li><i class="fa-solid fa-table-list"></i> Таблицы</li></a>
+            <a href="{% url 'form' %}" class="link" title="Go to forms"><li><i class="fa-brands fa-wpforms"></i> Форма</li></a>
+        </ul>
+    </aside>
+    <main class="conteiner">
+        {% block content %}
+        {% endblock %}
+    </main>
+{% endblock %}

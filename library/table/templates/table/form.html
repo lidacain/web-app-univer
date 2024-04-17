@@ -1,0 +1,24 @@
+{% extends 'main/aside.html' %}
+
+{% load static %}
+
+{% block aside %}
+    <aside>
+        <a href="{% url 'home' %}" class="logo-home"> <img src="{% static 'main/img/logo-univer.png' %}" alt="logo"> <span class="logo">UNIVER DB</span> </a><br>
+        <a href="{% url 'home' %}" class="btn btn-warning"><i class="fa-solid fa-angle-left"></i><span class="back">   ВЕРНУТЬСЯ</span></a>
+        <h3>Формы</h3>
+        <ul>
+            <a href="{% url 'form_faculties' %}" class="link"><li><i class="fa-solid fa-list-ol"></i> Факультеты</li></a>
+            <a href="{% url 'form_departments' %}" class="link"><li><i class="fa-solid fa-list-ol"></i> Кафедры</li></a>
+            <a href="{% url 'form_specialities' %}" class="link"><li><i class="fa-solid fa-list-ol"></i> Специальности</li></a>
+            <a href="{% url 'form_groups' %}" class="link"><li><i class="fa-solid fa-list-ol"></i> Группы</li></a>
+            <a href="{% url 'form_students' %}" class="link"><li><i class="fa-solid fa-list-ol"></i> Студенты</li></a>
+            <a href="{% url 'form_teachers' %}" class="link"><li><i class="fa-solid fa-list-ol"></i> Преподаватели</li></a>
+        </ul>
+        <a href="{% url 'faculties' %}" class="btn btn-dark"><i class="fa-brands fa-wpforms"></i><span class="back"> ТАБЛИЦЫ</span></a>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+{% endblock %}

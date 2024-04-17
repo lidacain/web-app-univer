@@ -1,0 +1,25 @@
+{% extends 'table/form.html' %}
+
+{% block title %}Форма заполения{% endblock %}
+
+{% block content %}
+    <div class="features features-form">
+        <h1>Форма заполенения таблицы "Факультеты"</h1>
+        <form method="post">
+            {% csrf_token %}
+            <table class="tabel-form">
+                <tr>
+                    <td>
+                        {{ form.name }}
+                    </td>
+                    <td>
+                        {{ form.dean }}
+                    </td>
+                </tr>
+            </table>
+            <button class="btn btn-success" type="submit">Добавить</button>
+            <br><br><br>
+            <span class="error">{{ error }}</span>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'main/aside.html' %}
+
+{% load static %}
+
+{% block aside %}
+
+    <body>
+
+    <div class="header">
+        <a href="{% url 'home' %}" class="logo-home"> <img src="{% static 'main/img/logo-univer.png' %}" alt="logo"> <span class="logo">UNIVER DB</span></a>
+        <a href="{% url 'home' %}" class="btn btn-warning"><i class="fa-solid fa-angle-left"></i><span class="back">   ВЕРНУТЬСЯ</span></a>
+        <a href="{% url 'faculties' %}" class="link"><i class="fa-solid fa-table-list"></i> Факультеты</a>
+        <a href="{% url 'departments' %}" class="link"><i class="fa-solid fa-table-list"></i> Кафедры</a>
+        <a href="{% url 'specialties' %}" class="link"><i class="fa-solid fa-table-list"></i> Специальности</a>
+        <a href="{% url 'groups' %}" class="link"><i class="fa-solid fa-table-list"></i> Группы</a>
+        <a href="{% url 'students' %}" class="link"><i class="fa-solid fa-table-list"></i> Студенты</a>
+        <a href="{% url 'teachers' %}" class="link"><i class="fa-solid fa-table-list"></i> Преподаватели</a>
+        <a href="{% url 'form' %}" class="btn btn-dark"><i class="fa-brands fa-wpforms"></i><span class="back"> ФОРМЫ ЗАПОЛНЕНИЯ</span></a>
+    </div>
+
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+{% endblock %}

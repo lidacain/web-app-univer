@@ -1,0 +1,37 @@
+{% extends 'table/sample.html' %}
+
+{% block title %}Таблицы{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1 class="table-striped h1">Специальности</h1>
+        <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>ID факультета</th>
+            <th>ID кафедры</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if data %}
+            {% for el in data %}
+                <tr>
+                    <td>{{ el.id }}</td>
+                    <td>{{ el.name }}</td>
+                    <td>{{ el.faculty_id }}</td>
+                    <td>{{ el.department_id }}</td>
+
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="10">Нет данных</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+
+    </div>
+{% endblock %}
